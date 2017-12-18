@@ -2,6 +2,8 @@
 Description=Allows setting the brightness of the display in /sys/class/backlight/gmux_backlight/brightness
 
 [Service]
+Type=idle
+Environment="TERM=dumb"
 ExecStart=/usr/bin/setpci -v -H1 -s 00:01.00 BRIDGE_CONTROL=0
 
 [Install]
